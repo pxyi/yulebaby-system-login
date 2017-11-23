@@ -365,23 +365,23 @@
 				userError: document.getElementById('userError'),
 				/* ------------------- 序列化请求参数 ------------------- */
 				serialize: function (data){
-			    var val = "", str = "";
-			    for(var v in data){
-			      str = v + "=" + data[v];
-			      val += str + '&';
-			    }
-			    return val.slice(0, val.length - 1);
+					var val = "", str = "";
+					for(var v in data){
+						str = v + "=" + data[v];
+						val += str + '&';
+					}
+					return val.slice(0, val.length - 1);
 			  },
 				/* ------------------ 记住本次登录数据 ------------------ */
-			  remember: function () {
-			  	if(document.getElementById('autoLogin').checked){
+				remember: function () {
+					if(document.getElementById('autoLogin').checked){
 						var nameVal = formInit.username.value,
 								pwdVal = formInit.userpwd.value;
-			  		window.localStorage.setItem('userInfo', JSON.stringify({username: nameVal, userpwd: pwdVal, system: selectSystemId}));
-			  	}else{
-			  		window.localStorage.clear();
-			  	}
-			  }
+						window.localStorage.setItem('userInfo', JSON.stringify({username: nameVal, userpwd: pwdVal, system: selectSystemId}));
+					}else{
+						window.localStorage.clear();
+					}
+				}
 			}
 
 			/* --------------- 取消浏览器自动填入用户名密码功能 --------------- */
