@@ -452,16 +452,16 @@
 					obj.onreadystatechange = function() {
             if (obj.readyState == 4) {
 							formInit.loginBtn.classList.remove('loading');
-              if(obj.status == 200 || obj.status == 304){
+							if(obj.status == 200 || obj.status == 304){
 								formInit.remember();
 								var res = JSON.parse(obj.responseText);
-                // formInit.userError.classList.add('error');
+								// formInit.userError.classList.add('error');
 							}else{
 								document.getElementById('loginError').innerText = '网络错误,请刷新重试';
 							}
-            }
-	        };
-	        obj.send(formInit.serialize({username: nameVal, userpwd: pwdVal}));
+						}
+					};
+					obj.send(formInit.serialize({username: nameVal, userpwd: pwdVal}));
 				}
 			}
 		}
